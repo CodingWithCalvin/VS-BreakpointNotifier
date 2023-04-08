@@ -17,9 +17,9 @@ namespace CodingWithCalvin.BreakpointNotifier.Vsix
             debugger.AdviseDebuggerEvents(this, out _);
         }
 
-        public static void Initialize()
+        public static DebuggerEvents Initialize()
         {
-            _ = new DebuggerEvents();
+           return new DebuggerEvents();
         }
 
         public int OnModeChange(DBGMODE dbgmodeNew)

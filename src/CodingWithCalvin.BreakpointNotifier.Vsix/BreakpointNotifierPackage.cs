@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
@@ -7,14 +8,16 @@ namespace CodingWithCalvin.BreakpointNotifier.Vsix
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
+    [Guid(PackageGuids.PackageGuidString)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class BreakpointNotifierPackage : AsyncPackage
     {
-        protected override Task OnAfterPackageLoadedAsync(CancellationToken cancellationToken)
+        protected override Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            DebuggerEvents.Initialize();
+            
+            InitializeCommand.Initialize(this);
 
-            return Task.CompletedTask;
+            return base.InitializeAsync(cancellationToken, progress);
         }
-
     }
 }
