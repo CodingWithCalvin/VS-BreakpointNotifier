@@ -9,7 +9,7 @@ namespace CodingWithCalvin.BreakpointNotifier.Vsix
     {
         public const string Id = "C91DDCEE-CDB2-46C4-B0EC-80B55F07D639";
         public const string Name = "Breakpoint Notifier";
-        public const string Description = @"Opens a dialog box in front of all other Windows to let you know that a breakpoint was hit. Great for multi-tasking!Opens a ";
+        public const string Description = @"Opens a dialog box in front of all other Windows to let you know that a breakpoint was hit. Great for multi-tasking!";
         public const string Language = "en-US";
         public const string Version = "1.1";
         public const string Author = "Coding with Calvin";

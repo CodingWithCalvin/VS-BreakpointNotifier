@@ -3,8 +3,9 @@
     <Metadata>
         <Identity Id="C91DDCEE-CDB2-46C4-B0EC-80B55F07D639" Version="1.1" Language="en-US" Publisher="Coding with Calvin" />
         <DisplayName>Breakpoint Notifier</DisplayName>
-        <Description xml:space="preserve">Opens a dialog box in front of all other Windows to let you know that a breakpoint was hit. Great for multi-tasking!Opens a </Description>
+        <Description xml:space="preserve">Opens a dialog box in front of all other Windows to let you know that a breakpoint was hit. Great for multi-tasking!</Description>
         <MoreInfo>https://github.com/CalvinAllen/BreakpointNotifier</MoreInfo>
+        <Icon>Resources\logo.png</Icon>
         <Tags>bin,debug,folder,output</Tags>
     </Metadata>
     <Installation>
