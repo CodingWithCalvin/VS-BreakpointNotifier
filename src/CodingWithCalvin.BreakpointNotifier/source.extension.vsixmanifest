@@ -5,8 +5,8 @@
         <DisplayName>Breakpoint Notifier</DisplayName>
         <Description xml:space="preserve">Opens a dialog box in front of all other Windows to let you know that a breakpoint was hit. Great for multi-tasking!</Description>
         <MoreInfo>https://github.com/CodingWithCalvin/VS-BreakpointNotifier</MoreInfo>
-        <Icon>Resources\logo.png</Icon>
-        <Tags>bin,debug,folder,output</Tags>
+        <Icon>resources\logo.png</Icon>
+        <Tags>debug,debugger,debugging</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Community">
