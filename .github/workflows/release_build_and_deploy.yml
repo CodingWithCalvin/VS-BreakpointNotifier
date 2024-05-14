@@ -1,37 +1,46 @@
-name: "Build and Deploy"
-
+name: 'Build and Deploy'
+  
 on:
   workflow_dispatch:
+  pull_request:
+    types: [opened, reopened]
   push:
-    branches:
+    branches: 
       - main
     tags-ignore:
-      - "release/**"
-
+      - 'v[0-9]+.[0-9]+.[0-9]+.[0-9]+'
+  
 jobs:
-  Release-Build-and-Deploy:
+  Release-Build-and-Deploy: 
     runs-on: windows-latest
-
+    
     steps:
-      - uses: actions/checkout@v3
-      - uses: microsoft/setup-msbuild@v1.3.1
+    - uses: actions/checkout@v4
+    - uses: microsoft/setup-msbuild@v2
+    - uses: nuget/setup-nuget@v2
 
-      - name: 1. Versioning Release
-        uses: CalvinAllen/action-vs-vsix-versioner@v1
-        with:
-          extension-manifest-file: "./src/CodingWithCalvin.BreakpointNotifier.Vsix/source.extension.vsixmanifest"
-          extension-source-file: "./src/CodingWithCalvin.BreakpointNotifier.Vsix/source.extension.cs"
+    - name: 1. Versioning Release
+      id: step-version
+      uses: CodingWithCalvin/GHA-VSVsixVersioner@v1
+      with:
+        extension-manifest-file: 'src/CodingWithCalvin.BreakpointNotifier/source.extension.vsixmanifest'
+        extension-source-file: 'src/CodingWithCalvin.BreakpointNotifier/source.extension.cs'
 
-      - name: 2. Bootstrapping NuGet Installer
-        uses: nuget/setup-nuget@v1.1.1
+    - name: 2. Restoring Packages
+      run: nuget restore src/CodingWithCalvin.BreakpointNotifier.sln
+    
+    - name: 3. Building Project
+      run: msbuild 'src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj' /p:configuration='Release' /p:platform='x64' /p:DeployExtension=False
 
-      - name: 3. Restoring Packages
-        run: nuget restore ./src/CodingWithCalvin.BreakpointNotifier.sln
-
-      - name: 4. Building Project
-        run: msbuild './src/CodingWithCalvin.BreakpointNotifier.Vsix/CodingWithCalvin.BreakpointNotifier.Vsix.csproj' /p:configuration='Release' /p:platform='x64'
-
-      - name: 5. Publishing Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          path: "./src/CodingWithCalvin.BreakpointNotifier.Vsix/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.Vsix.vsix"
+    - name: 4. Create Information File
+      uses: jsdaniell/create-json@v1.2.3
+      with:
+        name: 'src/CodingWithCalvin.BreakpointNotifier/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.info'
+        json: '{"sha":"${{ github.sha }}", "version":"${{ steps.step-version.outputs.version }}"}'
+    
+    - name: 5. Publishing Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        path: |
+          src/CodingWithCalvin.BreakpointNotifier/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.info
+          src/CodingWithCalvin.BreakpointNotifier/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.vsix

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using CodingWithCalvin.BreakpointNotifier.Vsix;
+using CodingWithCalvin.BreakpointNotifier;
 
 [assembly: AssemblyTitle(Vsix.Name)]
 [assembly: AssemblyDescription(Vsix.Description)]

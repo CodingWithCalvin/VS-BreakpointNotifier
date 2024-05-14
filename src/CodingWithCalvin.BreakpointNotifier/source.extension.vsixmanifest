@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="C91DDCEE-CDB2-46C4-B0EC-80B55F07D639" Version="1.1" Language="en-US" Publisher="Coding with Calvin" />
+        <Identity Id="VS-BreakpointNotifier" Version="1.1" Language="en-US" Publisher="Coding With Calvin" />
         <DisplayName>Breakpoint Notifier</DisplayName>
         <Description xml:space="preserve">Opens a dialog box in front of all other Windows to let you know that a breakpoint was hit. Great for multi-tasking!</Description>
-        <MoreInfo>https://github.com/CalvinAllen/BreakpointNotifier</MoreInfo>
+        <MoreInfo>https://github.com/CodingWithCalvin/VS-BreakpointNotifier</MoreInfo>
         <Icon>Resources\logo.png</Icon>
         <Tags>bin,debug,folder,output</Tags>
     </Metadata>
