@@ -2,12 +2,12 @@
   "$schema": "http://json.schemastore.org/vsix-publish",
   "categories": [
     "coding",
-    "other",
+    "build",
     "programming languages"
   ],
   "identity": {
     "internalName": "VS-BreakpointNotifier"
   },
   "overview": "../README.md",
-  "publisher": "coding-with-calvin"
+  "publisher": "CodingWithCalvin"
 }
