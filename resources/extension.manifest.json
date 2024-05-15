@@ -9,5 +9,7 @@
     "internalName": "VS-BreakpointNotifier"
   },
   "overview": "../README.md",
-  "publisher": "CodingWithCalvin"
+  "publisher": "CodingWithCalvin",
+  "qna": false,
+  "repo": "https://www.github.com/CodingWithCalvin/VS-BreakpointNotifier"
 }
