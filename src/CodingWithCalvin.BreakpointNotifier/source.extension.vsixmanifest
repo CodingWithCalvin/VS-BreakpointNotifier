@@ -9,11 +9,13 @@
         <MoreInfo>https://github.com/CodingWithCalvin/VS-BreakpointNotifier</MoreInfo>
         <Icon>resources\logo.png</Icon>
         <Tags>debug,debugger,debugging</Tags>
-        <Preview>true</Preview>
     </Metadata>
     <Installation>
-        <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Community">
+        <InstallationTarget Version="[17.0,19.0)" Id="Microsoft.VisualStudio.Community">
             <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[17.0,19.0)" Id="Microsoft.VisualStudio.Community">
+            <ProductArchitecture>arm64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
     <Dependencies>
