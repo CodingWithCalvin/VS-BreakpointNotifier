@@ -47,22 +47,22 @@ VS-BreakpointNotifier is a Visual Studio 2022 extension (VSIX) that displays a m
 
 ```bash
 # Restore NuGet packages
-nuget restore src/CodingWithCalvin.BreakpointNotifier.sln
+nuget restore src/CodingWithCalvin.BreakpointNotifier.slnx
 
-# Build Release (x64)
-msbuild src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj /p:configuration=Release /p:platform=x64 /p:DeployExtension=False
+# Build Release (AnyCPU)
+msbuild src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj /p:configuration=Release /p:platform=AnyCPU /p:DeployExtension=False
 
-# Build Debug (x64)
-msbuild src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj /p:configuration=Debug /p:platform=x64 /p:DeployExtension=False
+# Build Debug (AnyCPU)
+msbuild src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj /p:configuration=Debug /p:platform=AnyCPU /p:DeployExtension=False
 ```
 
-Output: `bin\x64\{Configuration}\CodingWithCalvin.BreakpointNotifier.vsix`
+Output: `bin\{Configuration}\CodingWithCalvin.BreakpointNotifier.vsix`
 
 ## Development Setup
 
 - Requires Visual Studio 2022 with C# development workload
 - Install "Extensibility Essentials 2022" extension for VS development
-- Open `CodingWithCalvin.BreakpointNotifier.sln` in Visual Studio
+- Open `CodingWithCalvin.BreakpointNotifier.slnx` in Visual Studio
 - Test by running in experimental VS instance (F5 from VS)
 
 ## Architecture
@@ -78,7 +78,7 @@ The extension has a minimal architecture with two core files:
 - C# / .NET Framework 4.8
 - Visual Studio SDK (v17.0+)
 - VSIX v3 package format
-- x64 architecture only
+- AnyCPU platform target
 
 ## CI/CD
 

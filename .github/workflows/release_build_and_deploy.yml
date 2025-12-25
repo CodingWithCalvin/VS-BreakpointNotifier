@@ -25,7 +25,7 @@ jobs:
         extension-source-file: 'src/CodingWithCalvin.BreakpointNotifier/source.extension.cs'
 
     - name: 2. Restoring Packages
-      run: nuget restore src/CodingWithCalvin.BreakpointNotifier.sln
+      run: nuget restore src/CodingWithCalvin.BreakpointNotifier.slnx
     
     - name: 3. Building Project
       run: msbuild 'src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj' /p:configuration='Release' /p:platform='AnyCPU' /p:DeployExtension=False
