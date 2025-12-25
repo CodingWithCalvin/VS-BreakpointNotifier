@@ -7,8 +7,6 @@ on:
   push:
     branches: 
       - main
-    tags-ignore:
-      - '[0-9]+.[0-9]+.[0-9]+.[0-9]+'
   
 jobs:
   Release-Build-and-Deploy: 
@@ -30,17 +28,17 @@ jobs:
       run: nuget restore src/CodingWithCalvin.BreakpointNotifier.sln
     
     - name: 3. Building Project
-      run: msbuild 'src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj' /p:configuration='Release' /p:platform='x64' /p:DeployExtension=False
+      run: msbuild 'src/CodingWithCalvin.BreakpointNotifier/CodingWithCalvin.BreakpointNotifier.csproj' /p:configuration='Release' /p:platform='AnyCPU' /p:DeployExtension=False
 
     - name: 4. Create Information File
       uses: jsdaniell/create-json@v1.2.3
       with:
-        name: 'src/CodingWithCalvin.BreakpointNotifier/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.info'
+        name: 'src/CodingWithCalvin.BreakpointNotifier/bin/Release/CodingWithCalvin.BreakpointNotifier.info'
         json: '{"sha":"${{ github.sha }}", "version":"${{ steps.step-version.outputs.version }}"}'
     
     - name: 5. Publishing Build Artifact
       uses: actions/upload-artifact@v4
       with:
         path: |
-          src/CodingWithCalvin.BreakpointNotifier/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.info
-          src/CodingWithCalvin.BreakpointNotifier/bin/x64/Release/CodingWithCalvin.BreakpointNotifier.vsix
+          src/CodingWithCalvin.BreakpointNotifier/bin/Release/CodingWithCalvin.BreakpointNotifier.info
+          src/CodingWithCalvin.BreakpointNotifier/bin/Release/CodingWithCalvin.BreakpointNotifier.vsix
