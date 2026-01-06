@@ -1,5 +1,7 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using CodingWithCalvin.Otel4Vsix;
 using Microsoft;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Debugger.Interop;
@@ -28,8 +30,7 @@ namespace CodingWithCalvin.BreakpointNotifier
 
         public int OnModeChange(DBGMODE dbgmodeNew)
         {
-            // No longer showing message here - we use IDebugEventCallback2 instead
-            // to specifically detect breakpoint hits vs. step operations
+            VsixTelemetry.LogInformation("Debugger mode changed to {Mode}", dbgmodeNew.ToString());
             return VSConstants.S_OK;
         }
 
@@ -44,7 +45,21 @@ namespace CodingWithCalvin.BreakpointNotifier
         {
             if (pEvent is IDebugBreakpointEvent2)
             {
-                MessageBox.Show("Breakpoint Hit!");
+                using var activity = VsixTelemetry.StartCommandActivity("BreakpointNotifier.BreakpointHit");
+
+                try
+                {
+                    VsixTelemetry.LogInformation("Breakpoint hit detected");
+                    MessageBox.Show("Breakpoint Hit!");
+                }
+                catch (Exception ex)
+                {
+                    activity?.RecordError(ex);
+                    VsixTelemetry.TrackException(ex, new Dictionary<string, object>
+                    {
+                        { "operation.name", "BreakpointHit" }
+                    });
+                }
             }
 
             return VSConstants.S_OK;
