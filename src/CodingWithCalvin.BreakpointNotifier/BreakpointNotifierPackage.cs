@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using CodingWithCalvin.Otel4Vsix;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -20,7 +21,31 @@ namespace CodingWithCalvin.BreakpointNotifier
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
+            var builder = VsixTelemetry.Configure()
+                .WithServiceName(VsixInfo.DisplayName)
+                .WithServiceVersion(VsixInfo.Version)
+                .WithVisualStudioAttributes(this)
+                .WithEnvironmentAttributes();
+
+#if !DEBUG
+            builder
+                .WithOtlpHttp("https://api.honeycomb.io")
+                .WithHeader("x-honeycomb-team", HoneycombConfig.ApiKey);
+#endif
+
+            builder.Initialize();
+
             DebuggerEvents.Initialize();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                VsixTelemetry.Shutdown();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }
