@@ -5,9 +5,21 @@ A Visual Studio extension that monitors debugging events and displays a notifica
 ## ✨ Features
 
 - 🎯 **Smart Detection** - Notifies on breakpoint hits
-- 💬 **Instant Notification** - Displays a message box that brings Visual Studio back into focus
+- 💬 **Flexible Notifications** - Choose between Windows toast notifications, classic message box, or both!
+- ⚙️ **Configurable** - Customize your notification style via Tools > Options
 - 🖥️ **Multi-Architecture** - Supports both x64 and ARM64 systems
 - 🚀 **VS 2022 & 2026** - Compatible with Visual Studio 2022 and Visual Studio 2026
+
+## 🔧 Configuration
+
+Configure your preferred notification style:
+
+1. Go to **Tools** > **Options**
+2. Navigate to **Breakpoint Notifier** > **General**
+3. Select your **Notification Style**:
+   - 🔔 **Toast** (default) - Non-intrusive Windows toast notification
+   - 📦 **MessageBox** - Classic message box that steals focus
+   - 🔔📦 **Both** - Get both notifications at once
 
 ## 📊 Status
 
