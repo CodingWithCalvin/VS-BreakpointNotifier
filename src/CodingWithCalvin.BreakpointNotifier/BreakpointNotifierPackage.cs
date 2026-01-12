@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using CodingWithCalvin.BreakpointNotifier.Options;
 using CodingWithCalvin.Otel4Vsix;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -12,6 +13,7 @@ namespace CodingWithCalvin.BreakpointNotifier
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [Guid("136f3004-4048-4dd9-bd6d-7ff910b2c900")]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideOptionPage(typeof(GeneralOptions), "Breakpoint Notifier", "General", 0, 0, true)]
     public sealed class BreakpointNotifierPackage : AsyncPackage
     {
         protected override async Task InitializeAsync(
@@ -35,7 +37,7 @@ namespace CodingWithCalvin.BreakpointNotifier
 
             builder.Initialize();
 
-            DebuggerEvents.Initialize();
+            DebuggerEvents.Initialize(this);
         }
 
         protected override void Dispose(bool disposing)
