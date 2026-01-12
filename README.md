@@ -2,6 +2,11 @@
 
 A Visual Studio extension that monitors debugging events and displays a notification when a breakpoint is hit. Perfect for when you're waiting for that breakpoint during a long-running process while catching up on YouTube videos! 🎬
 
+![Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)
+![Marketplace Installations](https://img.shields.io/visual-studio-marketplace/i/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)
+![License](https://img.shields.io/github/license/CodingWithCalvin/VS-BreakpointNotifier?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/CodingWithCalvin/VS-BreakpointNotifier/build.yml?style=for-the-badge)
+
 ## ✨ Features
 
 - 🎯 **Smart Detection** - Notifies on breakpoint hits
@@ -20,11 +25,6 @@ Configure your preferred notification style:
    - 🔔 **Toast** (default) - Non-intrusive Windows toast notification
    - 📦 **MessageBox** - Classic message box that steals focus
    - 🔔📦 **Both** - Get both notifications at once
-
-![Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)
-![Marketplace Installations](https://img.shields.io/visual-studio-marketplace/i/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)
-![License](https://img.shields.io/github/license/CodingWithCalvin/VS-BreakpointNotifier?style=for-the-badge)
-![Build Status](https://img.shields.io/github/actions/workflow/status/CodingWithCalvin/VS-BreakpointNotifier/build.yml?style=for-the-badge)
 
 ## 🤝 Contribute
 
