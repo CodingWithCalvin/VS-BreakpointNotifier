@@ -21,16 +21,10 @@ Configure your preferred notification style:
    - 📦 **MessageBox** - Classic message box that steals focus
    - 🔔📦 **Both** - Get both notifications at once
 
-## 📊 Status
-
-| | |
-|---|---|
-| **License** | [![License - MIT](https://img.shields.io/github/license/codingwithcalvin/VS-BreakpointNotifier?style=for-the-badge)](https://img.shields.io/github/license/codingwithcalvin/vs-BreakpointNotifier?style=for-the-badge) |
-| **Build** | ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/codingwithcalvin/VS-BreakpointNotifier/release_build_and_deploy.yml?style=for-the-badge) |
-| **Installs** | [![Marketplace Installations](https://img.shields.io/visual-studio-marketplace/i/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)](https://img.shields.io/visual-studio-marketplace/i/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge) |
-| **Downloads** | [![Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)](https://img.shields.io/visual-studio-marketplace/d/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge) |
-| **Version** | [![Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)](https://img.shields.io/visual-studio-marketplace/v/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge) |
-| **Rating** | [![Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)](https://img.shields.io/visual-studio-marketplace/r/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge) |
+![Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)
+![Marketplace Installations](https://img.shields.io/visual-studio-marketplace/i/codingwithcalvin.VS-BreakpointNotifier?style=for-the-badge)
+![License](https://img.shields.io/github/license/CodingWithCalvin/VS-BreakpointNotifier?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/CodingWithCalvin/VS-BreakpointNotifier/build.yml?style=for-the-badge)
 
 ## 🤝 Contribute
 
@@ -41,5 +35,9 @@ For cloning and building this project yourself, make sure to install the [Extens
 ## 👥 Contributors
 
 <!-- readme: contributors -start -->
-[![CalvinAllen](https://avatars.githubusercontent.com/u/41448698?v=4&s=64)](https://github.com/CalvinAllen) [![MarcolinoPT](https://avatars.githubusercontent.com/u/18648315?v=4&s=64)](https://github.com/MarcolinoPT) 
+[![CalvinAllen](https://avatars.githubusercontent.com/u/41448698?v=4&s=64)](https://github.com/CalvinAllen) [![MarcolinoPT](https://avatars.githubusercontent.com/u/18648315?v=4&s=64)](https://github.com/MarcolinoPT)
 <!-- readme: contributors -end -->
+
+---
+
+Made with ❤️ by [Coding With Calvin](https://github.com/CodingWithCalvin)
