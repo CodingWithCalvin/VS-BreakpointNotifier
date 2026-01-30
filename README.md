@@ -88,6 +88,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👥 Contributors
 
 <!-- readme: contributors -start -->
+<a href="https://github.com/CalvinAllen"><img src="https://avatars.githubusercontent.com/u/41448698?v=4&s=64" width="64" height="64" alt="CalvinAllen"></a> <a href="https://github.com/MarcolinoPT"><img src="https://avatars.githubusercontent.com/u/18648315?v=4&s=64" width="64" height="64" alt="MarcolinoPT"></a> 
 <!-- readme: contributors -end -->
 
 ---
