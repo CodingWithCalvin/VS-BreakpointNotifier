@@ -14,6 +14,4 @@ jobs:
       extension-name: BreakpointNotifier
       display-name: 'Breakpoint Notifier'
       marketplace-id: CodingWithCalvin.VS-BreakpointNotifier
-      description: 'Opens a dialog box when a breakpoint is hit - great for multi-tasking!'
-      hashtags: '#debugging'
     secrets: inherit
